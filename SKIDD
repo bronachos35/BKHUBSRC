@@ -4,7 +4,7 @@
  -- FULLY AI GENERATED, NO ONE IN SAB CAN CODE
 
 --[[
-    Brainrot Finder v5.1 (Flat "Titanz" Edition)
+    Steal a brainrot v5.1 (BananaHub)
     Reorganized and cleaned up for better readability
     Structure: Config -> Services -> Helpers -> Features -> GUI -> Init
 ]]
@@ -105,9 +105,9 @@ local Config = {
 }
 
 local COLORS = {
-    Background             = Color3.fromRGB(8, 8, 15),
+    Background             = Color3.fromRGB(255,255,255),
     BackgroundTransparency = 0.25,
-    Surface                = Color3.fromRGB(18, 12, 28),
+    Surface                = Color3.fromRGB(255,255,255),
     SurfaceTransparency    = 0.20,
     Text    = Color3.fromRGB(255, 255, 255),
     TextDim = Color3.fromRGB(230, 230, 240),
@@ -318,8 +318,8 @@ end
 local glowingTexts = {}
 
 local function makeTextGlow(textElement, color1, color2, duration, delay)
-    color1 = color1 or COLORS.Purple
-    color2 = color2 or Color3.fromRGB(255, 100, 255)
+    color1 = color1 or COLORS.Yellow
+    color2 = color2 or Color3.fromRGB(255, 255, 0)
     duration = duration or 1.2
     delay = delay or 0
     
@@ -380,27 +380,27 @@ local NOTIFICATION_TYPES = {
     success = {
         icon = "✓",
         color = COLORS.Success,
-        gradient = Color3.fromRGB(100, 255, 150)
+        gradient = Color3.fromRGB(255, 255, 0)
     },
     error = {
         icon = "✗",
         color = COLORS.Error,
-        gradient = Color3.fromRGB(255, 100, 120)
+        gradient = Color3.fromRGB(255, 255, 0)
     },
     warning = {
         icon = "⚠",
         color = COLORS.Warning,
-        gradient = Color3.fromRGB(255, 200, 50)
+        gradient = Color3.fromRGB(255, 255, 0)
     },
     info = {
         icon = "ℹ",
-        color = COLORS.Cyan,
-        gradient = Color3.fromRGB(100, 200, 255)
+        color = COLORS.Yellow,
+        gradient = Color3.fromRGB(255, 255, 0)
     },
     default = {
         icon = "•",
         color = COLORS.Accent,
-        gradient = COLORS.Purple
+        gradient = COLORS.Yellow
     }
 }
 
@@ -492,7 +492,7 @@ function showNotification(message, color, duration)
     
     -- Main frame
     notif.frame = createElement("Frame", {
-        Size = UDim2.new(0, 360, 0, 75),
+        Size = UDim2.new(0, 360, 0, 0),
         Position = UDim2.new(1, 1600, 1, 100),
         BackgroundColor3 = COLORS.Background,
         BackgroundTransparency = 0.15,
@@ -562,7 +562,7 @@ function showNotification(message, color, duration)
         Parent = notif.frame,
         ZIndex = 999999999999999,
     })
-    makeTextGlow(icon, Color3.fromRGB(255, 140, 255), Color3.fromRGB(180, 220, 255), 1.2, 0.3)
+    makeTextGlow(icon, Color3.fromRGB(255, 255,0), Color3.fromRGB(180, 220, 255), 1.2, 0.3)
     addTextGradient(icon, Color3.new(0.815686, 0.305882, 1.000000), Color3.fromHSV(0.578947, 0.298039, 1.000000), 45) 
     
     -- Message text
@@ -580,7 +580,7 @@ function showNotification(message, color, duration)
         Parent = notif.frame,
         ZIndex = 999999999999999,
     })
-    makeTextGlow(messageLabel, Color3.fromRGB(255, 140, 255), Color3.fromRGB(180, 220, 255), 1.2, 0.3)
+    makeTextGlow(messageLabel, Color3.fromRGB(255, 255, 0), Color3.fromRGB(180, 220, 255), 1.2, 0.3)
     addTextGradient(messageLabel, Color3.new(0.815686, 0.305882, 1.000000), Color3.fromHSV(0.578947, 0.298039, 1.000000), 45) 
     applyTitanzTextStyle(messageLabel)
     
